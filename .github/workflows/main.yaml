@@ -23,8 +23,7 @@ jobs:
           with:
             images: fitrakz/fiber_name
         
-        - name: Tagging docker-compose
-          run: |
+        - run: |
             sed -i "s/<TAG_IMAGE_DOCKER>/${{ steps.meta.outputs.tags }}/g" docker-compose.yml
         
         - name: Build and push Docker image
