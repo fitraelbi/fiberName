@@ -36,13 +36,13 @@ jobs:
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
         - name: copy docker-compose
-                uses: appleboy/scp-action@v0.1.4
-                with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  key: ${{ secrets.PRIVATE_KEY }}
-                  source: "docker-compose.yml"
-                  target: /home/cloud_user/fiberName
+          uses: appleboy/scp-action@v0.1.4
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.PRIVATE_KEY }}
+            source: "docker-compose.yml"
+            target: /home/cloud_user/fiberName
 
     Deploy:
         runs-on: ubuntu-latest
