@@ -1,0 +1,7 @@
+version: "3"
+services:
+    fiberhello:
+        container_name: fiber_name
+        image: fitrakz/fiber_name:latest
+        ports:
+            - "8000:5000"
