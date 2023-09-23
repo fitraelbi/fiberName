@@ -55,7 +55,7 @@ jobs:
             key: ${{ secrets.PRIVATE_KEY }}
             script: |
               cd /home/cloud_user/fiberName
-              sudo docker-compose down -d
-              sudo docker-compose up -d 
+              docker compose down -d
+              docker compose up -d 
  
         
