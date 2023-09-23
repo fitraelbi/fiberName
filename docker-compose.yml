@@ -2,6 +2,6 @@ version: "3"
 services:
     fiberhello:
         container_name: fiber_name
-        image: fitrakz/fiber_name:latest
+        image: fitrakz/fiber_name:<TAG_IMAGE_DOCKER>
         ports:
             - "8000:5000"
