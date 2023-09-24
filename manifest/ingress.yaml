@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fiber-name-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "fiber-name-ip"
+spec: 
+  rules:
+    - host: fiber-name.id
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fiber-name
+                port:
+                  number: 8000
+
+        

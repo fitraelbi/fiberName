@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiber-name
+  labels:
+    app: fiber-name
+spec:
+  selector:
+    matchLabels:
+      app: fiber-name
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: fiber-name
+    spec:
+      containers:
+      - name: fiber-name
+        image: fitrakz/fiber_name:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - mountPath: /etc/fiber.conf
+          name: fiberhelloconf
+      volumes:
+        - name: config
+          configMap:
+            name: fiber-name-config
