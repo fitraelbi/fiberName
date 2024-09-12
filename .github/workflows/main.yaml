@@ -1,6 +1,6 @@
 name: Fiber-Name
 
-on: workflow_dispatch
+on: [push]
         
 
 jobs:
